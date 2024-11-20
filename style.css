@@ -189,3 +189,119 @@ h1 {
     }
 }
 
+
+/* --- Gaya Halaman Awal (Intro) --- */
+
+/* Kontainer halaman intro */
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Menggeser konten ke atas */
+    padding-top: 50px; /* Tambahkan jarak dari atas */
+    height: 100vh;
+    text-align: center;
+    background-color: #fbe8e7;
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden; /* Pastikan lingkaran tidak keluar dari layar */
+}
+
+/* Tombol Call-to-Action */
+.cta-button {
+    background-color: #ff7675;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    z-index: 1; /* Pastikan tombol ada di atas lingkaran */
+}
+
+.cta-button:hover {
+    background-color: #e74c3c;
+}
+
+/* Kontainer lingkaran foto */
+.circle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    z-index: 0; /* Lingkaran berada di belakang teks */
+    overflow: hidden;
+}
+
+/* Lingkaran Foto */
+.circle {
+    width: 12vw; /* Menggunakan viewport width (vw) untuk responsif */
+    height: 12vw; /* Menggunakan viewport width (vw) untuk responsif */
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Memberikan efek bayangan */
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.9; /* Sedikit transparan */
+}
+
+/* Efek hover pada lingkaran */
+.circle:hover {
+    transform: scale(1.1); /* Membesarkan lingkaran saat dihover */
+}
+
+/* --- Media Queries untuk Responsif --- */
+
+/* Untuk layar dengan lebar 768px atau lebih kecil (misalnya tablet dan ponsel Android) */
+@media only screen and (max-width: 768px) {
+    .intro-container {
+        padding-top: 20px; /* Mengurangi jarak atas */
+    }
+
+    .circle {
+        width: 25vw; /* Ukuran lingkaran disesuaikan untuk layar lebih kecil */
+        height: 25vw; /* Ukuran lingkaran disesuaikan untuk layar lebih kecil */
+    }
+
+    .cta-button {
+        font-size: 14px; /* Menyesuaikan ukuran font tombol */
+        padding: 8px 16px; /* Ukuran tombol yang lebih kecil */
+    }
+
+    .intro-container h1 {
+        font-size: 24px; /* Ukuran font judul lebih kecil */
+    }
+
+    .intro-container p {
+        font-size: 16px; /* Ukuran font deskripsi lebih kecil */
+    }
+}
+
+/* Untuk layar dengan lebar 480px atau lebih kecil (misalnya ponsel Android kecil) */
+@media only screen and (max-width: 480px) {
+    .circle {
+        width: 30vw; /* Ukuran lingkaran yang lebih besar untuk ponsel kecil */
+        height: 30vw; /* Ukuran lingkaran yang lebih besar untuk ponsel kecil */
+    }
+
+    .cta-button {
+        font-size: 12px; /* Menyesuaikan ukuran font tombol */
+        padding: 6px 12px; /* Ukuran tombol lebih kecil */
+    }
+
+    .intro-container h1 {
+        font-size: 20px; /* Ukuran font judul lebih kecil */
+    }
+
+    .intro-container p {
+        font-size: 14px; /* Ukuran font deskripsi lebih kecil */
+    }
+}
+
